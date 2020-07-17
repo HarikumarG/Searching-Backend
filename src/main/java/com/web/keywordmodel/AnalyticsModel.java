@@ -2,20 +2,28 @@ package com.web.keywordmodel;
 
 public class AnalyticsModel {
 
-	private int searchcount;
-	private int resultcount;
+	private long searchcount;
+	private long resultcount;
+	private long timetaken;
 
-	public int getSearchcount() {
+	public long getSearchcount() {
 		return searchcount;
 	}
-	public void setSearchcount(int searchcount) {
+	public void setSearchcount(long searchcount) {
 		this.searchcount = searchcount;
 	}
 
-	public int getResultcount() {
+	public long getResultcount() {
 		return resultcount;
 	}
-	public void setResultcount(int resultcount) {
+	public void setResultcount(long resultcount) {
 		this.resultcount = resultcount;
+	}
+
+	public long getTimetaken() {
+		return timetaken;
+	}
+	public void setTimetaken(long timetaken) {
+		this.timetaken = timetaken;
 	}
 }

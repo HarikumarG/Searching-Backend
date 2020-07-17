@@ -42,6 +42,7 @@ public class AnalyticsController extends HttpServlet {
 		// System.out.println(AnalyticsUtil.maxResultCountVal);
 
 		Map<String,ArrayList<AnalyticsJson>> jsonMap = new HashMap<>();
+		AnalyticsModel model = KeywordController.analytics.get(keyword);
 
 		ArrayList<AnalyticsJson> templist = new ArrayList<>();
 		AnalyticsJson searchcountjson1 = new AnalyticsJson();
@@ -51,13 +52,17 @@ public class AnalyticsController extends HttpServlet {
 		searchcountjson1.setKeyval(AnalyticsUtil.maxSearchCountVal);
 		templist.add(searchcountjson1);
 
-		AnalyticsModel model = KeywordController.analytics.get(keyword);
-
 		AnalyticsJson searchcountjson2 = new AnalyticsJson();
 		searchcountjson2.setKeytype("current");
 		searchcountjson2.setKeyname(keyword);
 		searchcountjson2.setKeyval(model.getSearchcount());
 		templist.add(searchcountjson2);
+
+		AnalyticsJson searchcountjson3 = new AnalyticsJson();
+		searchcountjson3.setKeytype("min");
+		searchcountjson3.setKeyname(AnalyticsUtil.minSearchCountKey);
+		searchcountjson3.setKeyval(AnalyticsUtil.minSearchCountVal);
+		templist.add(searchcountjson3);
 
 		jsonMap.put("searchcount",templist);
 		
@@ -75,7 +80,35 @@ public class AnalyticsController extends HttpServlet {
 		resultcountjson2.setKeyval(model.getResultcount());
 		templist1.add(resultcountjson2);
 
+		AnalyticsJson resultcountjson3 = new AnalyticsJson();
+		resultcountjson3.setKeytype("min");
+		resultcountjson3.setKeyname(AnalyticsUtil.minResultCountKey);
+		resultcountjson3.setKeyval(AnalyticsUtil.minResultCountVal);
+		templist1.add(resultcountjson3);
+
 		jsonMap.put("resultcount",templist1);
+
+		ArrayList<AnalyticsJson> templist2 = new ArrayList<>();
+		AnalyticsJson timetakenjson1 = new AnalyticsJson();
+
+		timetakenjson1.setKeytype("max");
+		timetakenjson1.setKeyname(AnalyticsUtil.maxTimeTakenKey);
+		timetakenjson1.setKeyval(AnalyticsUtil.maxTimeTakenVal);
+		templist2.add(timetakenjson1);
+
+		AnalyticsJson timetakenjson2 = new AnalyticsJson();
+		timetakenjson2.setKeytype("current");
+		timetakenjson2.setKeyname(keyword);
+		timetakenjson2.setKeyval(model.getTimetaken());
+		templist2.add(timetakenjson2);
+
+		AnalyticsJson timetakenjson3 = new AnalyticsJson();
+		timetakenjson3.setKeytype("min");
+		timetakenjson3.setKeyname(AnalyticsUtil.minTimeTakenKey);
+		timetakenjson3.setKeyval(AnalyticsUtil.minTimeTakenVal);
+		templist2.add(timetakenjson3);
+
+		jsonMap.put("timetaken",templist2);
 
 		String json = new Gson().toJson(jsonMap);
 		response.getWriter().write(json);

@@ -4,7 +4,7 @@ public class AnalyticsJson {
 
 	private String keytype;
 	private String keyname;
-	private int keyval;
+	private long keyval;
 
 	public String getKeytype() {
 		return keytype;
@@ -12,7 +12,7 @@ public class AnalyticsJson {
 	public String getKeyname() {
 		return keyname;
 	}
-	public int getKeyval() {
+	public long getKeyval() {
 		return keyval;
 	}
 
@@ -22,7 +22,7 @@ public class AnalyticsJson {
 	public void setKeyname(String keyname) {
 		this.keyname = keyname;
 	}
-	public void setKeyval(int keyval) {
+	public void setKeyval(long keyval) {
 		this.keyval = keyval;
 	}
 }
