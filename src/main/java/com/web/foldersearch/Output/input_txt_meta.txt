@@ -1,0 +1,6 @@
+input.txt
+/home/harikumar_g/Documents/projects/Searching-Backend/src/main/java/com/web/foldersearch/test/
+68
+Sun Jul 19 14:03:08 2020
+Thu Jul  9 13:31:05 2020
+

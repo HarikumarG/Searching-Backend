@@ -1,4 +1,4 @@
-package com.web.keywordcontroller;
+package com.web.service;
 
 import java.io.*;
 import javax.servlet.ServletException;
@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.*;
-import com.web.keywordservice.CheckPath;
 
 @WebServlet("/checkpath")
 public class PathcheckController extends HttpServlet {
