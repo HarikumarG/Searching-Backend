@@ -14,6 +14,7 @@ import java.util.*;
 @WebServlet("/foldersearch")
 public class FolderController extends HttpServlet {
 
+	private static int id = 1;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		StringBuffer jb = new StringBuffer();
@@ -57,12 +58,14 @@ public class FolderController extends HttpServlet {
 						property[j] = strline;
 						j++;
 					}
+					json.setId(property[0]+"_"+(Integer.toString(id)));
 					json.setFilename(property[0]);
 					json.setFilepath(property[1]);
 					json.setFilesize(property[2]);
 					json.setCreatedtime(property[3]);
 					json.setModifiedtime(property[4]);
 					jsonList.add(json);
+					id++;
 				} catch(Exception e) {
 					System.out.println("Error in reading meta-file "+e.getMessage());
 				}

@@ -2,12 +2,16 @@ package com.web.foldermodel;
 
 public class FolderJson {
 
+	private String id;
 	private String filename;
 	private String filepath;
 	private String filesize;
 	private String createdtime;
 	private String modifiedtime;
 
+	public String getId() {
+		return id;
+	}
 	public String getFilename() {
 		return filename;
 	}
@@ -24,6 +28,9 @@ public class FolderJson {
 		return modifiedtime;
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
