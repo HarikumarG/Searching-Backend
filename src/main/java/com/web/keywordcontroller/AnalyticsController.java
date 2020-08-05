@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.*;
 import com.web.keywordmodel.*;
 import com.web.keywordservice.AnalyticsUtil;
+import com.web.keyworddao.KeywordDao;
 
 @WebServlet("/analytics")
 public class AnalyticsController extends HttpServlet {
@@ -35,14 +36,10 @@ public class AnalyticsController extends HttpServlet {
 		String keyword = jsonObject.get("keyword").getAsString();
 		System.out.println(keyword);
 
-
-		// System.out.println(AnalyticsUtil.maxSearchCountKey);
-		// System.out.println(AnalyticsUtil.maxSearchCountVal);
-		// System.out.println(AnalyticsUtil.maxResultCountKey);
-		// System.out.println(AnalyticsUtil.maxResultCountVal);
+		KeywordDao dao = new KeywordDao();
+		AnalyticsModel model = dao.getAnalyticsData(keyword);
 
 		Map<String,ArrayList<AnalyticsJson>> jsonMap = new HashMap<>();
-		AnalyticsModel model = KeywordController.analytics.get(keyword);
 
 		ArrayList<AnalyticsJson> templist = new ArrayList<>();
 		AnalyticsJson searchcountjson1 = new AnalyticsJson();
