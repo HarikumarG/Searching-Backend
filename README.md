@@ -13,7 +13,7 @@ https://github.com/HarikumarG/Searching-Frontend (For Frontend)
 
 1. Git clone this repository and you will need apache tomcat to run the project
 2. Run the command `mvn clean install`
-3. Run foldersearch.sh and keyword.sh (this will compile cpp file and store the ./a.out file in java -D library path
+3. Run foldersearch.sh and keyword.sh (this will compile cpp file and store the ./a.out file in java -D library path for Linux(Ubuntu))
 4. Run start.sh to copy the maven compiled jar file to tomcat webapps and to run the project
 
 Have a look on Searching-Frontend repository for frontend web app.
