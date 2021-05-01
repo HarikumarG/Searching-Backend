@@ -4,6 +4,7 @@ A java application which consists of two parts.
 
 1. File search, given a pattern and folder path will show all the files matching the pattern in the same hierarchical folder structure
 2. Keyword search, given a file name,path and keyword to be searched will show all the lines that matches the given keyword
+3. Displays search statistics for keywords
 
 File search and keyword search both are done in c++ to increase the performance and efficiency. The concept behind calling cpp from java is by using JNI(Java Native Interface).
 
